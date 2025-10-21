@@ -1,0 +1,308 @@
+/* style.css - shared styles for Book Circle (sky blue theme) */
+
+:root{
+  --sky-50: #eaf8ff;
+  --sky-100: #d7f0ff;
+  --sky-200: #bfe8ff;
+  --sky-400: #87d7ff;
+  --sky-500: #4fc3ff;
+  --sky-600: #2196f3;
+  --accent: #0e73c7;
+  --muted: #667788;
+  --card-radius: 14px;
+  --max-width: 1100px; /* laptop friendly width */
+  --nav-height: 68px;
+  --font-sans: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*{box-sizing: border-box}
+html,body{
+  height:100%;
+  margin:0;
+  font-family: var(--font-sans);
+  background: linear-gradient(180deg,var(--sky-50),#f3fbff);
+  color:#08345a;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* page container centered for laptop */
+.container{
+  max-width:var(--max-width);
+  margin:28px auto;
+  padding:20px;
+}
+
+/* Top header common */
+.header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:18px;
+}
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.brand .logo {
+  width:52px;height:52px;border-radius:12px;
+  background:linear-gradient(135deg,var(--sky-400),var(--sky-500));
+  display:flex;align-items:center;justify-content:center;
+  color:white;font-weight:700;font-size:20px;
+  box-shadow: 0 6px 18px rgba(16,100,180,0.12);
+}
+.brand h1{font-size:20px;margin:0;}
+.header .profile-mini {font-size:14px;color:var(--muted)}
+
+/* Centered card for welcome, login, signup */
+.card {
+  background: white;
+  border-radius: var(--card-radius);
+  padding:28px;
+  box-shadow: 0 8px 30px rgba(14,55,90,0.06);
+}
+
+/* Forms */
+.form {
+  max-width:720px;
+  margin:20px auto 0;
+}
+.form .field{
+  display:flex;
+  flex-direction:column;
+  margin-bottom:14px;
+}
+.form label{font-size:13px;color:var(--muted);margin-bottom:6px}
+.input, textarea, select {
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid #e6f2fb;
+  background:#fbfeff;
+  font-size:15px;
+  outline:none;
+}
+input:focus, textarea:focus, select:focus {
+  box-shadow:0 6px 18px rgba(33,150,243,0.12);
+  border-color:var(--sky-600);
+}
+.btn {
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:12px;
+  border:0;
+  cursor:pointer;
+  background: linear-gradient(90deg,var(--sky-500),var(--sky-600));
+  color:white;
+  font-weight:600;
+  box-shadow: 0 8px 22px rgba(33,150,243,0.12);
+}
+
+/* small link style */
+.link {
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* Layout for home & profile pages */
+.grid {
+  display:grid;
+  grid-template-columns: 1fr 400px;
+  gap:20px;
+  align-items:start;
+}
+
+/* left column (main feed) */
+.feed {
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+/* search & filters */
+.searchbar {
+  display:flex;
+  gap:12px;
+  align-items:center;
+  background:linear-gradient(180deg,#f6fdff,#ffffff);
+  padding:12px;border-radius:12px;border:1px solid #e7f7ff;
+}
+.searchbar input {
+  flex:1;padding:10px 12px;border-radius:10px;border:none;background:transparent;
+}
+.filters {
+  display:flex;
+  gap:10px;
+}
+.filter-select {padding:8px 10px;border-radius:10px;border:1px solid #e6f3fb;background:#fbfeff}
+
+/* Book card */
+.book-card{
+  display:flex;
+  gap:14px;
+  background:linear-gradient(180deg,#ffffff,#fbfdff);
+  padding:12px;border-radius:12px;border:1px solid #eef9ff;
+}
+.book-card img{
+  width:120px;height:150px;object-fit:cover;border-radius:8px;
+}
+.book-info {
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.book-meta {font-size:13px;color:var(--muted)}
+.book-title {font-weight:700;font-size:16px;margin:2px 0}
+.book-actions {display:flex;gap:8px;align-items:center}
+
+/* right column (sidebar) */
+.sidebar {
+  position:sticky;
+  top:28px;
+  align-self:start;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.small-card {background:white;padding:12px;border-radius:12px;border:1px solid #eef8ff}
+.small-card h3{margin:0 0 8px 0}
+
+/* bottom navigation - consistent across pages */
+.bottom-nav {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 18px;
+  width: min(960px, calc(100% - 48px));
+  height: var(--nav-height);
+  background: linear-gradient(90deg, rgba(79,195,255,0.12), rgba(33,150,243,0.06));
+  border-radius: 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+  padding: 8px 18px;
+  box-shadow: 0 18px 50px rgba(14,55,90,0.06);
+  border:1px solid rgba(33,150,243,0.06);
+  backdrop-filter: blur(6px);
+  z-index:2000;
+}
+.nav-item{
+  display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;color:var(--accent);font-weight:600;font-size:13px;
+}
+.nav-item svg{width:22px;height:22px;fill:var(--accent)}
+
+/* profile header on profile page */
+.profile-header{
+  display:flex;align-items:center;gap:16px;padding:12px;border-radius:12px;background:#ffffff;border:1px solid #eefaff;
+}
+.avatar {
+  width:72px;height:72px;border-radius:14px;background:linear-gradient(135deg,var(--sky-400),var(--sky-500));
+  display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:22px;
+}
+
+/* profile sections (three blocks) */
+.profile-sections{
+  display:grid;grid-template-columns:1fr;gap:14px;
+}
+.section-card{
+  background:white;padding:14px;border-radius:12px;border:1px solid #eef9ff;
+}
+
+/* posted book list (grid) */
+.posts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.post-card{display:flex;gap:12px;align-items:flex-start}
+
+/* messages page */
+.chat-list{display:flex;flex-direction:column;gap:12px}
+.chat-item{display:flex;gap:12px;align-items:center;padding:10px;border-radius:10px;background:#ffffff;border:1px solid #eef8ff}
+
+/* Chat window and messages */
+.chat-header {
+  font-weight: 700;
+  font-size: 20px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 12px;
+}
+
+#chatWindow {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  padding: 12px;
+}
+
+#threadMessages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #f9fbff;
+  border-radius: 8px;
+  border: 1px solid var(--muted);
+}
+
+.message {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.3;
+  word-wrap: break-word;
+}
+
+.message.sent {
+  align-self: flex-end;
+  background: linear-gradient(90deg, var(--sky-500), var(--sky-600));
+  color: #fff;
+  border-bottom-right-radius: 2px;
+}
+
+.message.received {
+  align-self: flex-start;
+  background: #fff;
+  color: #08345a;
+  border-bottom-left-radius: 2px;
+  border: 1px solid var(--muted);
+}
+
+.message.bot {
+  align-self: flex-start;
+  background: #e3f2fd;
+  color: #08345a;
+  border-bottom-left-radius: 2px;
+  border: 1px solid #bbdefb;
+}
+
+.message .timestamp {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 6px;
+  text-align: right;
+}
+
+/* small responsive tweak for narrower laptops */
+@media (max-width:1000px){
+  .grid{grid-template-columns:1fr}
+  .posts-grid{grid-template-columns:1fr}
+}
+
+/* Override posts-grid to single column for full width cards */
+.posts-grid {
+  grid-template-columns: 1fr !important;
+}
+
+/* Star rating */
+.star-rating {
+  color: gold;
+}
+

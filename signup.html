@@ -1,0 +1,43 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sign up — Book Circle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card" style="max-width:760px;margin:30px auto">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <div>
+          <h2 style="margin:0">Create your account</h2>
+          <div style="color:var(--muted);font-size:14px;margin-top:6px">Join Book Circle, It helps students buy and sell books easily, so knowledge keeps moving.</div>
+        </div>
+        <div class="logo">Book Circle</div>
+      </div>
+
+      <form class="form" id="signupForm">
+        <div class="field">
+          <label>Username</label>
+          <input class="input" type="text" id="signupUsername" placeholder="e.g. krishna123" required>
+        </div>
+
+        <div class="field">
+          <label>Password</label>
+          <input class="input" type="password" id="signupPassword" placeholder="Choose a strong password" required>
+        </div>
+
+        <div style="display:flex;gap:12px;align-items:center;justify-content:space-between;margin-top:10px">
+          <button type="submit" class="btn">Create account</button>
+          <div style="color:var(--muted)">Already a member? <a class="link" href="login.html">login</a></div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
