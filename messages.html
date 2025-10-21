@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Messages — Book Circle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">BC</div>
+        <div>
+          <h1>Messages</h1>
+          <div class="profile-mini">Conversations</div>
+        </div>
+      </div>
+      <div>
+        <a class="link" href="profile.html">Profile</a>
+      </div>
+    </header>
+
+    <div class="grid">
+      <div>
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <h3 style="margin:0">Your chats</h3>
+            <a class="link" href="#">New chat</a>
+          </div>
+          <div class="chat-list" style="margin-top:12px">
+            <div class="chat-item">
+              <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--sky-400),var(--sky-500));display:flex;align-items:center;justify-content:center;color:white;font-weight:700">A</div>
+              <div style="flex:1">
+                <div style="font-weight:700">arya</div>
+                <div style="color:var(--muted);font-size:13px">Is the book still available?</div>
+              </div>
+              <div style="color:var(--muted);font-size:12px">2h</div>
+            </div>
+
+            <div class="chat-item">
+              <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--sky-400),var(--sky-500));display:flex;align-items:center;justify-content:center;color:white;font-weight:700">R</div>
+              <div style="flex:1">
+                <div style="font-weight:700">rohan</div>
+                <div style="color:var(--muted);font-size:13px">Can you deliver to library?</div>
+              </div>
+              <div style="color:var(--muted);font-size:12px">1d</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div id="chatHeader" class="chat-header" style="padding: 12px 16px; font-weight: 700; font-size: 18px; border-bottom: 1px solid var(--muted); margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
+          <div id="chatHeaderAvatar" class="avatar" style="width: 40px; height: 40px; font-size: 18px; background: linear-gradient(135deg, var(--sky-400), var(--sky-500)); display: flex; align-items: center; justify-content: center; color: white; border-radius: 10px;">
+          </div>
+          <div id="chatHeaderUsername">Select a conversation</div>
+        </div>
+      <div id="chatWindow" class="section-card card" style="display:flex; flex-direction: column; height: 500px; max-width: 400px;">
+        <div id="threadMessages" style="flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 8px; background: #f9fbff; border-radius: 8px; border: 1px solid var(--muted);"></div>
+        <div style="display:flex; gap:8px; margin-top: 12px;">
+          <input id="chatInput" class="input" placeholder="Type a message..." style="flex: 1; padding: 10px; font-size: 14px; border-radius: 8px; border: 1px solid var(--muted);" />
+          <button class="btn" id="sendMsgBtn" style="padding: 10px 16px; font-size: 14px; border-radius: 8px;">Send</button>
+        </div>
+      </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- bottom nav -->
+  <nav class="bottom-nav" aria-label="main navigation">
+    <a class="nav-item" href="home.html">
+      <svg viewBox="0 0 24 24"><path d="M3 11.5L12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V11.5z"/></svg>
+      Home
+    </a>
+    <a class="nav-item" href="messages.html">
+      <svg viewBox="0 0 24 24"><path d="M21 6.5A2.5 2.5 0 0 0 18.5 4h-13A2.5 2.5 0 0 0 3 6.5v7A2.5 2.5 0 0 0 5.5 16H7v3l3-3h8.5A2.5 2.5 0 0 0 21 13.5v-7z"/></svg>
+      Messages
+    </a>
+    <a class="nav-item" href="profile.html">
+      <svg viewBox="0 0 24 24"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-4.4 0-8 2.2-8 4.8V22h16v-3.2c0-2.6-3.6-4.8-8-4.8z"/></svg>
+      Profile
+    </a>
+    <a class="nav-item" href="chatbot.html">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16v10H10l-6 6V4z"/></svg>
+      Ask AI
+    </a>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
